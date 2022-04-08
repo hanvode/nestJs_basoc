@@ -1,0 +1,14 @@
+Controllers
+Controllers chịu trách nhiệm xử lý các request đến và response lại client. 
+Giống như các framework khác mỗi controller đảm nhận xử lý các request đến 1 router. 
+Để tạo 1 controller chúng ta sử dụng các class và decorator. 
+Decorator liên kết các class với các siêu dữ liệu cần thiết và cho phép Nest tạo 1 router liên kết đến controller đó. 
+Chúng ta có thể sử dụng NestCLI để tạo 1 controller bằng lệnh nest g controller cat.
+khi chúng ta trả về dữ liệu kiểu nguyên thủy như string, number, boolean thì Nest chỉ đơn giản là response chúng về client. 
+Nhưng khi chúng ra trả về 1 object hay 1 array thì Nest sẽ tự động serialize nó sang JSON. Điều này giúp chúng ta chỉ cần 
+trả về giá trị, việc còn lại Nest sẽ đảm nhận.
+==================================
+Request object
+Tại trình xử lý cần truy cập vào request để lấy dữ liệu mà client gửi lên. Nest cung cấp 1 đối đượng request để tham chiếu 
+đến request - (Express by default). Chúng ta có thể truy cập đến đối tượng request này bằng các sử dụng decorator @Req() 
+tại tham số của method findAll.

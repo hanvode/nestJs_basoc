@@ -1,0 +1,27 @@
+Dưới đây là tổng quan ngắn gọn về các tệp cốt lõi đó:
+
+app.controller.ts	    Một controller cơ bản với một route.
+app.controller.spec.ts	unit tests cho controller.
+app.module.ts	        root module của ứng dụng.
+app.service.ts	        Một service cơ bản với một phương thức
+main.ts	                Tên tin đi vào của ứng dụng mà nó sử dụng hàm lõi  NestFactory  để tạo một instance ứng dụng Nest.
+
+=============================================================================
+
+Main.ts bao gồm một hàm không đồng bộ, sẽ khởi động ứng dụng của chúng tôi:
+============================================================================
+Request object đại diện cho request HTTP và các thuộc tính của chuỗi query, request, parameters, HTTP headers, và body 
+(đọc thêm tại đây). Trong hầu hết các trường hợp, không cần thiết phải lấy các thuộc tính theo cách thủ công. Thay vào đó, 
+ta có thể sử dụng các decorator chuyên dụng, chẳng hạn như @Body() hoặc @Query(), sẵn có dùng được luôn. Dưới đây là danh sách 
+các decorator được cung cấp và các đối tượng đơn giản dành riêng cho platform mà chúng đại diện.
+
+@Request(), @Req()	    req
+@Response(), @Res()*	res
+@Next()	                next
+@Session()	            req.session
+@Param(key?: string)	req.params / req.params[key]
+@Body(key?: string)	    req.body / req.body[key]
+@Query(key?: string)	req.query / req.query[key]
+@Headers(name?: string)	req.headers / req.headers[name]
+@Ip()	                req.ip
+@HostParam()	        req.hosts
